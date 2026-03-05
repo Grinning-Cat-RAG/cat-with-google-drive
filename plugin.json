@@ -1,0 +1,9 @@
+{
+    "name": "Cat with Google Drive",
+    "version": "0.1.0",
+    "description": "This plugin allows to ingest files or an entire folder from Google Drive, by using a custom API endpoint.",
+    "author_name": "Matteo Cacciola",
+    "author_url": "https://github.com/matteocacciola",
+    "plugin_url": "https://github.com/matteocacciola/cat_with_google_drive",
+    "tags": "google drive, file ingestion, memory, rabbithole"
+}
