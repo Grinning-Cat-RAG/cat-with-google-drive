@@ -21,8 +21,8 @@ class DriveIngestResponse(BaseModel):
     info: str
 
 
-def get_drive_service(cat) -> Resource:
-    settings = cat.mad_hatter.get_plugin().load_settings()
+async def get_drive_service(cat: CheshireCat) -> Resource:
+    settings = await cat.mad_hatter.get_plugin().load_settings()
     if not settings.get("service_account_json"):
         raise ValueError("Google Service Account JSON not configured in the settings of the plugin.")
 
@@ -77,7 +77,7 @@ async def process_and_ingest_recursive(service: Resource, item_id: str, cat: Che
 async def background_drive_task(drive_id: str, cat: CheshireCat):
     """Wrapper for the async execution"""
     try:
-        service = get_drive_service(cat)
+        service = await get_drive_service(cat)
         await process_and_ingest_recursive(service, drive_id, cat)
         log.info(f"Task Google Drive completed for ID: {drive_id}")
     except Exception as e:
