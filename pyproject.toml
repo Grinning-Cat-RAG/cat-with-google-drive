@@ -1,0 +1,10 @@
+[project]
+name = "cat-with-google-drive"
+version = "0.1.0"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "google-api-python-client",
+    "google-auth-httplib2",
+    "google-auth-oauthlib",
+    "google-api-python-client-stubs",
+]
